@@ -1,0 +1,20 @@
+/*LIGHT*/
+
+:root {
+  --c-primary-color: #edf5f8; /*grayish*/
+  --c-main-text-color: #000224; /*blackish*/
+  --c-main-text-color-dull: #9aa2af; /*grayish*/
+  --c-nav-background-color: #06163a; /*dark blue*/
+  --c-nav-text-color: #d8e1f2; /*white*/
+  --c-logo-text-color: #fffffd; /*white*/
+  --c-big-buttons-color: #ff5e15; /*orange*/
+  --c-process-button: #f33921; /*red*/
+  --c-open-button: #4aa23c; /*green*/
+  --c-on-hold-button: #667add; /*blue*/
+}
+
+/*DARK*/
+/*
+.dark:root {
+}
+*/
