@@ -11,7 +11,7 @@
 
 <script>
 import CustomText from '@/components/CustomText' //@ = alias(kısayol)
-import IconHome from '../icons/Home.svg'
+import IconHome from '../../icons/Home.svg'
 export default {
   name: 'Home',
   components: {
