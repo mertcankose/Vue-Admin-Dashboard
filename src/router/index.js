@@ -42,7 +42,7 @@ const routes = [
     ],
   },
   {
-    path: "/notifications",
+    path: "/notification",
     name: "Notification",
     component: () =>
       import(
@@ -70,6 +70,12 @@ const routes = [
       import(/* webpackChunkName: "About" */ "../views/about/About"),
   },
   {
+    path: "/profile",
+    name: "Profile",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/profile/Profile"),
+  },
+  {
     path: "/settings",
     name: "Setting",
     component: () =>
@@ -78,7 +84,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "history", //history modunda bir router kullandığımız zaman sayfadaki bütün linklerin clicklerinin linklerini overated edip router ile birlikte çalışmasını sağlıyor.
   base: process.env.BASE_URL,
   routes,
 });
