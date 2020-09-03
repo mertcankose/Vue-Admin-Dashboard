@@ -3,10 +3,11 @@
     <MasterNavigation></MasterNavigation>
     <div class="header_main">
       <Header></Header>
-
-      <MainContent class="mainContent">
-        <router-view />
-      </MainContent>
+      <Container class="container">
+        <MainContent class="mainContent">
+          <router-view />
+        </MainContent>
+      </Container>
     </div>
   </div>
 </template>
@@ -17,12 +18,14 @@
 import MasterNavigation from "@/components/Navigation";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
+import Container from "./components/Container";
 export default {
   name: "App",
   components: {
     MasterNavigation,
     Header,
-    MainContent
+    MainContent,
+    Container
   }
 };
 </script>
@@ -35,6 +38,12 @@ export default {
 .header_main {
   background-color: var(--c-primary-color);
 }
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .mainContent {
+  padding-left: 14px;
+  padding-right: 14px;
 }
 </style>

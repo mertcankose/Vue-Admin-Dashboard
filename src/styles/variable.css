@@ -12,6 +12,8 @@
   --c-process-button: #f33921; /*red*/
   --c-open-button: #4aa23c; /*green*/
   --c-on-hold-button: #667add; /*blue*/
+  --c-search-border-color: #dbdbdb;
+  --c-search-background-color: #fafafa;
 }
 
 /*DARK*/
