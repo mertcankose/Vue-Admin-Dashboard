@@ -1,42 +1,49 @@
 <template>
   <div class="app">
-    <MasterNavigation></MasterNavigation>
+    <Navigation></Navigation>
     <div class="header_main">
       <Header></Header>
       <Container class="container">
-        <MainContent class="mainContent">
+        <Content class="mainContent">
           <router-view />
-        </MainContent>
+        </Content>
       </Container>
     </div>
   </div>
 </template>
 
-
-
 <script>
-import MasterNavigation from "@/components/Navigation";
-import Header from "./components/Header";
-import MainContent from "./components/MainContent";
-import Container from "./components/Container";
+import Navigation from "@/components/Navigation/Navigation";
+import Header from "./components/Header/Header";
+import Content from "./components/Content/Content";
+import Container from "./components/Helpers/Container";
 export default {
   name: "App",
   components: {
-    MasterNavigation,
+    Navigation,
     Header,
-    MainContent,
+    Content,
     Container
   }
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 .app {
+  background-color: var(--c-primary-color);
   display: grid;
-  grid-template-columns: 246px 1fr;
+  grid-template-columns: 240px 1fr;
+
+  @media (--t) {
+    grid-template-columns: 100px 1fr;
+  }
+  @media (--tl) {
+    grid-template-columns: 1fr;
+  }
 }
 .header_main {
   background-color: var(--c-primary-color);
+  /*height: 100vh;*/
 }
 .container {
   margin-top: 20px;

@@ -5,14 +5,13 @@
 </template>
 
 <script>
-import CustomText from "@/components/CustomText";
-export default {
-  name: "Document",
-  components: {
-    CustomText
-  }
-};
+  import CustomText from "@/components/Helpers/CustomText";
+  export default {
+    name: "Document",
+    components: {
+      CustomText,
+    },
+  };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
