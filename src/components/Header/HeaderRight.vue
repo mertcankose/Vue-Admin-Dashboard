@@ -4,10 +4,10 @@
       <IconHome width="40px" height="40px"></IconHome>
     </router-link>
     <button>
-      <IconMessage></IconMessage>
+      <IconMessage />
     </button>
     <button>
-      <IconNotification></IconNotification>
+      <IconNotification />
     </button>
     <router-link to="/profile" class="profile-photo">
       <Avatar :size="36"></Avatar>
@@ -20,7 +20,7 @@
 import IconMessage from "../../icons/Message.svg";
 import IconNotification from "../../icons/Notification.svg";
 import IconHome from "../../icons/Home.svg";
-import Avatar from "./Avatar";
+import Avatar from "./HeaderAvatar";
 
 export default {
   components: {

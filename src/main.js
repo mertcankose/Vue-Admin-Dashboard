@@ -5,6 +5,14 @@ import router from "./router";
 import store from "./store";
 import "./styles/app.css";
 
+export const eventBus = new Vue({
+  methods: {
+    reportNav(value) {
+      this.$emit("clickedMenu", value);
+    },
+  },
+});
+
 Vue.config.productionTip = false;
 
 new Vue({

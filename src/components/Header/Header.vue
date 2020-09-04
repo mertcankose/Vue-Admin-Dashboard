@@ -1,22 +1,42 @@
 <template>
   <header class="header">
-    <Logo></Logo>
-    <Search></Search>
-    <Right></Right>
+    <div>
+      <IconClose v-if="controlMenu" @click="toggleMenu"></IconClose>
+      <IconMenu v-else @click="toggleMenu"></IconMenu>
+    </div>
+
+    <Search />
+    <Right />
   </header>
 </template>
 
 <script>
 //components
-import Logo from "./Logo";
-import Search from "./Search";
-import Right from "./Right";
+import Search from "./HeaderSearch";
+import Right from "./HeaderRight";
+//icons
+import IconMenu from "../../icons/Hamburger.svg";
+import IconClose from "../../icons/Close.svg";
+//eventBus
+import { eventBus } from "../../main";
 export default {
   name: "Header",
   components: {
-    Logo,
+    IconMenu,
+    IconClose,
     Search,
     Right
+  },
+  data() {
+    return {
+      controlMenu: true
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.controlMenu = !this.controlMenu;
+      eventBus.reportNav(!this.controlMenu);
+    }
   }
 };
 </script>
@@ -34,14 +54,15 @@ export default {
   z-index: 99;
   /*tablet*/
   @media (--t) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 5px 1fr;
   }
   /*mobile*/
   @media (--tl) {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
   }
 }
 </style>

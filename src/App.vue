@@ -1,6 +1,6 @@
 <template>
-  <div class="app">
-    <Navigation></Navigation>
+  <div class="app" :class="{'active':menuClicked}">
+    <Navigation class="nav"></Navigation>
     <div class="header_main">
       <Header></Header>
       <Container class="container">
@@ -17,6 +17,8 @@ import Navigation from "@/components/Navigation/Navigation";
 import Header from "./components/Header/Header";
 import Content from "./components/Content/Content";
 import Container from "./components/Helpers/Container";
+//eventBus
+import { eventBus } from "./main";
 export default {
   name: "App",
   components: {
@@ -24,6 +26,16 @@ export default {
     Header,
     Content,
     Container
+  },
+  data() {
+    return {
+      menuClicked: false
+    };
+  },
+  created() {
+    eventBus.$on("clickedMenu", value => {
+      this.menuClicked = value;
+    });
   }
 };
 </script>
@@ -32,13 +44,23 @@ export default {
 .app {
   background-color: var(--c-primary-color);
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 15rem 1fr;
 
   @media (--t) {
     grid-template-columns: 100px 1fr;
   }
   @media (--tl) {
     grid-template-columns: 1fr;
+  }
+}
+
+.app.active {
+  grid-template-columns: 0px 1fr;
+  @media (--tl) {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    visibility: hidden;
   }
 }
 .header_main {

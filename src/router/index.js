@@ -76,6 +76,30 @@ const routes = [
       import(/* webpackChunkName: "About" */ "../views/profile/Profile"),
   },
   {
+    path: "/reactions",
+    name: "Reactions",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/Reactions/Reactions"),
+  },
+  {
+    path: "/mails",
+    name: "Mails",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/Mails/Mails"),
+  },
+  {
+    path: "/gallery",
+    name: "Gallery",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/Gallery/Gallery"),
+  },
+  {
+    path: "/calendar",
+    name: "Calendar",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/Calendar/Calendar"),
+  },
+  {
     path: "/settings",
     name: "Setting",
     component: () =>

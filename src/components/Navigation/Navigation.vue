@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation">
+  <nav class="navigation" :class="{'active':clickedMenu}">
     <div class="logoAndText">
       <router-link to="/" class="logo">
         <img
@@ -15,33 +15,57 @@
         <IconHome></IconHome>
         <CustomText v-if="showAndHide">Home</CustomText>
       </router-link>
+
       <router-link to="/widgets">
         <IconCompass></IconCompass>
         <CustomText v-if="showAndHide">Widgets</CustomText>
       </router-link>
+
       <router-link to="/notification">
         <IconNotification></IconNotification>
         <CustomText v-if="showAndHide">Notification</CustomText>
       </router-link>
+
       <router-link to="/documentation">
         <IconDocumentation></IconDocumentation>
         <CustomText v-if="showAndHide">Documentation</CustomText>
       </router-link>
+
       <router-link to="/form">
         <IconForm></IconForm>
         <CustomText v-if="showAndHide">Form</CustomText>
       </router-link>
+
+      <router-link to="/reactions">
+        <IconFace></IconFace>
+        <CustomText v-if="showAndHide">Reactions</CustomText>
+      </router-link>
+
+      <router-link to="/mails">
+        <IconMail></IconMail>
+        <CustomText v-if="showAndHide">Emails</CustomText>
+      </router-link>
+
+      <router-link to="/calendar">
+        <IconCalendar></IconCalendar>
+        <CustomText v-if="showAndHide">Calendar</CustomText>
+      </router-link>
+
+      <router-link to="/gallery">
+        <IconCamera></IconCamera>
+        <CustomText v-if="showAndHide">Gallery</CustomText>
+      </router-link>
+
       <router-link to="/about">
         <IconPerson></IconPerson>
         <CustomText v-if="showAndHide">About</CustomText>
       </router-link>
+
       <router-link to="/settings">
         <IconSettings></IconSettings>
         <CustomText v-if="showAndHide">Settings</CustomText>
       </router-link>
     </div>
-    <p>{{ windowHeight }}</p>
-    <p>{{ windowWidth }}</p>
   </nav>
 </template>
 
@@ -54,8 +78,14 @@ import IconForm from "../../icons/Saved.svg";
 import IconSettings from "../../icons/Settings.svg";
 import IconPerson from "../../icons/Person.svg";
 import IconCompass from "../../icons/Compass.svg";
+import IconFace from "../../icons/Face.svg";
+import IconMail from "../../icons/Email.svg";
+import IconCalendar from "../../icons/Calendar.svg";
+import IconCamera from "../../icons/Camera.svg";
 //components
 import CustomText from "../Helpers/CustomText";
+//eventBus
+import { eventBus } from "../../main";
 
 export default {
   name: "Navigation",
@@ -67,14 +97,24 @@ export default {
     IconSettings,
     IconPerson,
     IconCompass,
+    IconFace,
+    IconMail,
+    IconCalendar,
+    IconCamera,
     CustomText
   },
-  data: function() {
+  data() {
     return {
       windowWidth: undefined,
       windowHeight: undefined,
-      showAndHide: true
+      showAndHide: true,
+      clickedMenu: false
     };
+  },
+  created() {
+    eventBus.$on("clickedMenu", value => {
+      this.clickedMenu = value;
+    });
   },
 
   mounted() {
@@ -125,9 +165,18 @@ export default {
   height: 100vh;
   color: #fff;
   font-size: 18px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: all 0.2s;
+  transform: translateX(0);
+  opacity: 1;
   @media (--tl) {
-    display: none;
+    position: fixed;
   }
+}
+.active {
+  transform: translateX(-100%);
+  transition: all 0.2s;
 }
 .logoAndText {
   display: flex;
@@ -161,14 +210,15 @@ export default {
 
 .nav-links {
   a {
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 12px;
+    padding: 12px;
+    margin-left: 6px;
   }
 }
 
 svg {
   width: 22px;
   height: 22px;
-  margin-right: 10px;
+  margin-right: 13px;
 }
 </style>
