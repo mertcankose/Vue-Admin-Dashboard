@@ -1,9 +1,16 @@
 <template>
-  <div>Profile</div>
+  <div>
+    <CustomText size="big">Mertcan Köse</CustomText>
+  </div>
 </template>
 
 <script>
-export default {};
+import CustomText from "../../components/Helpers/CustomText";
+export default {
+  components: {
+    CustomText
+  }
+};
 </script>
 
 <style>

@@ -45,24 +45,25 @@ export default {
   background-color: var(--c-primary-color);
   display: grid;
   grid-template-columns: 15rem 1fr;
+  height: 100vh;
 
   @media (--t) {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 80px 1fr;
   }
   @media (--tl) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 80px 1fr;
   }
 }
 
 .app.active {
   grid-template-columns: 0px 1fr;
-  @media (--tl) {
-    grid-template-columns: 1fr;
-  }
+
   .nav {
     visibility: hidden;
+    opacity: 0;
   }
 }
+
 .header_main {
   background-color: var(--c-primary-color);
   /*height: 100vh;*/

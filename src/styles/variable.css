@@ -14,6 +14,16 @@
   --c-on-hold-button: #667add; /*blue*/
   --c-search-border-color: #dbdbdb;
   --c-search-background-color: #fafafa;
+
+  --c-small-card-base--text-color: #53627c; /*gray*/
+  --c-small-card-revinue: #def1ff; /*blue*/
+  --c-small-card-revinue-text: #22a1ff; /*bold blue*/
+  --c-small-card-task: #fff7da; /*yellow*/
+  --c-small-card-task-text: #ffc700; /*bold yellow*/
+  --c-small-card-rate: #ffe7dd; /*orange*/
+  --c-small-card-rate-text: #ff5f15; /*bold orange*/
+  --c-small-card-request: #efdcff; /*purple*/
+  --c-small-card-request-text: #9414ff; /*bold purple*/
 }
 
 /*DARK*/

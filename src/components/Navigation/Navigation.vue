@@ -158,30 +158,28 @@ export default {
   background-color: var(--c-nav-background-color);
   display: flex;
   flex-direction: column;
+  /*
   position: sticky;
   left: 0;
   top: 0;
   bottom: 0;
-  height: 100vh;
+  */
   color: #fff;
-  font-size: 18px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   transition: all 0.2s;
   transform: translateX(0);
   opacity: 1;
   @media (--tl) {
-    position: fixed;
   }
 }
 .active {
   transform: translateX(-100%);
-  transition: all 0.2s;
 }
 .logoAndText {
   display: flex;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   padding: 20px;
   @media (--t) {
     justify-content: center;
@@ -217,8 +215,8 @@ export default {
 }
 
 svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   margin-right: 13px;
 }
 </style>
