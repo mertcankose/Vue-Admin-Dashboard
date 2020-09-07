@@ -59,6 +59,11 @@ export default {
   grid-template-columns: 0px 1fr;
 
   .nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
     visibility: hidden;
     opacity: 0;
   }

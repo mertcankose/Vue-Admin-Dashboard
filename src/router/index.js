@@ -23,7 +23,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: "module",
+        name: "Module",
         component: () =>
           import(/* webpackChunkName: "Widgets" */ "../views/widgets/Module"),
       },
@@ -40,6 +40,13 @@ const routes = [
           import(/* webpackChunkName: "Widgets" */ "../views/widgets/File"),
       },
     ],
+  },
+
+  {
+    path: "/profile",
+    name: "Profile",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/profile/Profile"),
   },
   {
     path: "/notification",
@@ -64,18 +71,6 @@ const routes = [
       import(/* webpackChunkName: "Form" */ "../views/form/Form"),
   },
   {
-    path: "/about",
-    name: "About",
-    component: () =>
-      import(/* webpackChunkName: "About" */ "../views/about/About"),
-  },
-  {
-    path: "/profile",
-    name: "Profile",
-    component: () =>
-      import(/* webpackChunkName: "About" */ "../views/profile/Profile"),
-  },
-  {
     path: "/reactions",
     name: "Reactions",
     component: () =>
@@ -87,12 +82,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "About" */ "../views/Mails/Mails"),
   },
-  {
-    path: "/gallery",
-    name: "Gallery",
-    component: () =>
-      import(/* webpackChunkName: "About" */ "../views/Gallery/Gallery"),
-  },
+
   {
     path: "/calendar",
     name: "Calendar",
@@ -100,8 +90,20 @@ const routes = [
       import(/* webpackChunkName: "About" */ "../views/Calendar/Calendar"),
   },
   {
+    path: "/gallery",
+    name: "Gallery",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/Gallery/Gallery"),
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/about/About"),
+  },
+  {
     path: "/settings",
-    name: "Setting",
+    name: "Settings",
     component: () =>
       import(/* webpackChunkName: "About" */ "../views/Settings/Settings"),
   },

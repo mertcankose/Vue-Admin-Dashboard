@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation" :class="{'active':clickedMenu}">
+  <nav class="navigation">
     <div class="logoAndText">
       <router-link to="/" class="logo">
         <img
@@ -11,60 +11,61 @@
     </div>
 
     <div class="nav-links">
-      <router-link to="/">
-        <IconHome></IconHome>
+      <router-link :to="{ name: 'Home' }">
+        <IconHome />
         <CustomText v-if="showAndHide">Home</CustomText>
       </router-link>
+      <div class="nav-links2">
+        <router-link :to="{ name: 'Module' }">
+          <IconCompass></IconCompass>
+          <CustomText v-if="showAndHide">Widgets</CustomText>
+        </router-link>
 
-      <router-link to="/widgets">
-        <IconCompass></IconCompass>
-        <CustomText v-if="showAndHide">Widgets</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Notification' }">
+          <IconNotification></IconNotification>
+          <CustomText v-if="showAndHide">Notification</CustomText>
+        </router-link>
 
-      <router-link to="/notification">
-        <IconNotification></IconNotification>
-        <CustomText v-if="showAndHide">Notification</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Documentation' }">
+          <IconDocumentation></IconDocumentation>
+          <CustomText v-if="showAndHide">Documentation</CustomText>
+        </router-link>
 
-      <router-link to="/documentation">
-        <IconDocumentation></IconDocumentation>
-        <CustomText v-if="showAndHide">Documentation</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Form' }">
+          <IconForm></IconForm>
+          <CustomText v-if="showAndHide">Form</CustomText>
+        </router-link>
 
-      <router-link to="/form">
-        <IconForm></IconForm>
-        <CustomText v-if="showAndHide">Form</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Reactions' }">
+          <IconFace></IconFace>
+          <CustomText v-if="showAndHide">Reactions</CustomText>
+        </router-link>
 
-      <router-link to="/reactions">
-        <IconFace></IconFace>
-        <CustomText v-if="showAndHide">Reactions</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Mails' }">
+          <IconMail></IconMail>
+          <CustomText v-if="showAndHide">Emails</CustomText>
+        </router-link>
 
-      <router-link to="/mails">
-        <IconMail></IconMail>
-        <CustomText v-if="showAndHide">Emails</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Calendar' }">
+          <IconCalendar></IconCalendar>
+          <CustomText v-if="showAndHide">Calendar</CustomText>
+        </router-link>
 
-      <router-link to="/calendar">
-        <IconCalendar></IconCalendar>
-        <CustomText v-if="showAndHide">Calendar</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Gallery' }">
+          <IconCamera></IconCamera>
+          <CustomText v-if="showAndHide">Gallery</CustomText>
+        </router-link>
 
-      <router-link to="/gallery">
-        <IconCamera></IconCamera>
-        <CustomText v-if="showAndHide">Gallery</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'About' }">
+          <IconPerson></IconPerson>
+          <CustomText v-if="showAndHide">About</CustomText>
+        </router-link>
 
-      <router-link to="/about">
-        <IconPerson></IconPerson>
-        <CustomText v-if="showAndHide">About</CustomText>
-      </router-link>
-
-      <router-link to="/settings">
-        <IconSettings></IconSettings>
-        <CustomText v-if="showAndHide">Settings</CustomText>
-      </router-link>
+        <router-link :to="{ name: 'Settings' }">
+          <IconSettings></IconSettings>
+          <CustomText v-if="showAndHide">Settings</CustomText>
+        </router-link>
+      </div>
     </div>
   </nav>
 </template>
@@ -72,6 +73,7 @@
 <script>
 //icons
 import IconHome from "../../icons/Home.svg";
+
 import IconNotification from "../../icons/Notification.svg";
 import IconDocumentation from "../../icons/Table.svg";
 import IconForm from "../../icons/Saved.svg";
@@ -115,6 +117,7 @@ export default {
     eventBus.$on("clickedMenu", value => {
       this.clickedMenu = value;
     });
+    console.log(this.$route.params);
   },
 
   mounted() {
@@ -158,12 +161,7 @@ export default {
   background-color: var(--c-nav-background-color);
   display: flex;
   flex-direction: column;
-  /*
-  position: sticky;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  */
+
   color: #fff;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -210,8 +208,13 @@ export default {
   a {
     margin-bottom: 12px;
     padding: 12px;
-    margin-left: 6px;
+    margin-left: 0;
   }
+}
+
+.nav-links2 a.router-link-active {
+  background-color: var(--c-primary-color);
+  color: #000;
 }
 
 svg {

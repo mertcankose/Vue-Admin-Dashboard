@@ -48,11 +48,9 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 86px;
-  /*
   position: sticky;
   top: 0;
   right: 0;
-  */
   z-index: 99;
   /*tablet*/
   @media (--t) {

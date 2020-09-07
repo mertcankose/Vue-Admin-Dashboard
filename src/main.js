@@ -3,7 +3,12 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
+import Vuesax from "vuesax";
+import "@/plugins/apexcharts";
 import "./styles/app.css";
+
+import "vuesax/dist/vuesax.css"; //Vuesax styles
+Vue.use(Vuesax);
 
 export const eventBus = new Vue({
   methods: {

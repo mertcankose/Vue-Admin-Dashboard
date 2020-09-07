@@ -8,8 +8,11 @@
 export default {};
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 .mainContent {
-  margin-bottom: 100px;
+  gap: 28px;
+  @media (--t) {
+    padding-bottom: 200px;
+  }
 }
 </style>

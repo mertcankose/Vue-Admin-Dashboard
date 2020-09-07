@@ -1,11 +1,18 @@
 <template>
   <form class="search">
-    <input type="search" placeholder="Search" />
+    <vs-input warn type="search" v-model="value" label="Search" />
   </form>
 </template>
 
 <script>
-export default {};
+export default {
+  components: {},
+  data() {
+    return {
+      value: ""
+    };
+  }
+};
 </script>
 
 <style scoped lang="postcss">
@@ -14,7 +21,7 @@ export default {};
   display: flex;
   justify-content: center;
   align-items: center;
-  display: block;
+
   input {
     width: 215px;
     height: 28px;

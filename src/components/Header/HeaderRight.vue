@@ -10,7 +10,12 @@
       <IconNotification />
     </button>
     <router-link to="/profile" class="profile-photo">
-      <Avatar :size="36"></Avatar>
+      <vs-avatar size="30" badge badge-color="success">
+        <img
+          src="https://instagram.fyei1-1.fna.fbcdn.net/v/t51.2885-19/s150x150/91263926_225407688572391_4380236136425979904_n.jpg?_nc_ht=instagram.fyei1-1.fna.fbcdn.net&_nc_ohc=ZKAXPz5JvS4AX8lL4L_&oh=d009a5c66b52edd5b69edfeeed43476f&oe=5F7B7458"
+          alt
+        />
+      </vs-avatar>
     </router-link>
   </nav>
 </template>
@@ -20,14 +25,14 @@
 import IconMessage from "../../icons/Message.svg";
 import IconNotification from "../../icons/Notification.svg";
 import IconHome from "../../icons/Home.svg";
-import Avatar from "./HeaderAvatar";
+//import Avatar from "./HeaderAvatar";
 
 export default {
   components: {
     IconMessage,
     IconNotification,
-    IconHome,
-    Avatar
+    IconHome
+    //Avatar
   }
 };
 </script>

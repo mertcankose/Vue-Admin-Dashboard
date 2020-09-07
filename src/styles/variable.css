@@ -14,6 +14,7 @@
   --c-on-hold-button: #667add; /*blue*/
   --c-search-border-color: #dbdbdb;
   --c-search-background-color: #fafafa;
+  --c-box-background-color: #fff;
 
   --c-small-card-base--text-color: #53627c; /*gray*/
   --c-small-card-revinue: #def1ff; /*blue*/
@@ -24,6 +25,11 @@
   --c-small-card-rate-text: #ff5f15; /*bold orange*/
   --c-small-card-request: #efdcff; /*purple*/
   --c-small-card-request-text: #9414ff; /*bold purple*/
+
+  /*garph*/
+  --c-pie-yellow: #ffc700;
+  --c-pie-blue: #22a1fe;
+  --c-pie-red: #ff5e15;
 }
 
 /*DARK*/
