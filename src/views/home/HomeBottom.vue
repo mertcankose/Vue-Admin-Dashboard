@@ -1,6 +1,5 @@
 <template>
   <div class="home-bottom">
-    <div>1</div>
     <div class="table-box">
       <Table />
     </div>
@@ -19,16 +18,19 @@ export default {
 <style scoepd lang="postcss">
 .home-bottom {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr;
   gap: 28px;
-  .table-box {
-    background-color: var(--c-box-background-color);
-    border-radius: 14px;
-  }
-  div {
-  }
   @media (--t) {
     grid-template-columns: 1fr;
+  }
+  .table-box {
+    //background-color: var(--c-box-background-color);
+    border-radius: 14px;
+    @media (--t) {
+      overflow-x: auto;
+    }
+  }
+  div {
   }
 }
 </style>

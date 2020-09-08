@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :style="{ backgroundColor: backcolor,borderColor:color}">
+  <div class="card" :style="{ backgroundColor: backcolor,}">
     <CustomText size="big">
       <slot name="head" />
     </CustomText>
@@ -46,10 +46,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px 40px;
-  color: var(--c-small-card-base--text-color);
-  border-radius: 6px;
-  border: 1px solid;
+  padding: 10px 14px;
+  color: var(--c-small-card-text-color);
+  border-radius: 8px;
+  border: 1px solid #ccc;
   .card-body {
     display: flex;
     justify-content: space-between;
@@ -68,7 +68,7 @@ export default {
   }
 }
 svg {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
 }
 </style>

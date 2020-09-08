@@ -1,14 +1,5 @@
 <template>
-  <div id="chart" class="chart-wrapper">
-    <apexchart
-      class="chart"
-      width="450"
-      height="450"
-      type="donut"
-      :options="options"
-      :series="series"
-    ></apexchart>
-  </div>
+  <apexchart width="50%" type="donut" :options="options" :series="series"></apexchart>
 </template>
 <script>
 export default {
@@ -32,15 +23,7 @@ export default {
           horizontal: 10,
           vertical: 0
         }
-      },
-      responsive: [
-        {
-          breakpoint: 300,
-          options: {
-            width: 200
-          }
-        }
-      ]
+      }
     },
 
     series: [34, 55, 11]
@@ -48,13 +31,6 @@ export default {
 };
 </script>
 <style scoped lang="postcss">
-div.chart-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#chart {
-}
 </style>
 
 

@@ -12,7 +12,7 @@ export default {};
 .mainContent {
   gap: 28px;
   @media (--t) {
-    padding-bottom: 200px;
+    padding-bottom: 100px;
   }
 }
 </style>

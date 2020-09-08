@@ -29,7 +29,10 @@ export default {
 }
 .home {
   display: grid;
-  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-rows: 2.5fr 1fr 2.5fr;
   gap: 28px;
+  @media (--t) {
+    grid-template-rows: 2fr 1fr 500px;
+  }
 }
 </style>

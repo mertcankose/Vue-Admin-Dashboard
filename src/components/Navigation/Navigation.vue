@@ -13,17 +13,17 @@
     <div class="nav-links">
       <router-link :to="{ name: 'Home' }">
         <IconHome />
-        <CustomText v-if="showAndHide">Home</CustomText>
+        <CustomText v-if="showAndHide">Dashboard</CustomText>
       </router-link>
       <div class="nav-links2">
+        <router-link :to="{ name: 'Data' }">
+          <IconData></IconData>
+          <CustomText v-if="showAndHide">Data</CustomText>
+        </router-link>
+
         <router-link :to="{ name: 'Module' }">
           <IconCompass></IconCompass>
           <CustomText v-if="showAndHide">Widgets</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Notification' }">
-          <IconNotification></IconNotification>
-          <CustomText v-if="showAndHide">Notification</CustomText>
         </router-link>
 
         <router-link :to="{ name: 'Documentation' }">
@@ -73,8 +73,6 @@
 <script>
 //icons
 import IconHome from "../../icons/Home.svg";
-
-import IconNotification from "../../icons/Notification.svg";
 import IconDocumentation from "../../icons/Table.svg";
 import IconForm from "../../icons/Saved.svg";
 import IconSettings from "../../icons/Settings.svg";
@@ -84,6 +82,7 @@ import IconFace from "../../icons/Face.svg";
 import IconMail from "../../icons/Email.svg";
 import IconCalendar from "../../icons/Calendar.svg";
 import IconCamera from "../../icons/Camera.svg";
+import IconData from "../../icons/Data.svg";
 //components
 import CustomText from "../Helpers/CustomText";
 //eventBus
@@ -93,7 +92,7 @@ export default {
   name: "Navigation",
   components: {
     IconHome,
-    IconNotification,
+    IconData,
     IconDocumentation,
     IconForm,
     IconSettings,
@@ -158,13 +157,15 @@ export default {
 
 <style scoped lang="postcss">
 .navigation {
-  background-color: var(--c-nav-background-color);
+  background-color: #fff;
+  //background-color: var(--c-nav-background-color);
   display: flex;
   flex-direction: column;
 
-  color: #fff;
-  border-top-right-radius: 20px;
+  color: #000;
+  border-top-right-radius: 5px;
   border-bottom-right-radius: 20px;
+  border-right: 1px solid #fafafa;
   transition: all 0.2s;
   transform: translateX(0);
   opacity: 1;
@@ -212,9 +213,14 @@ export default {
   }
 }
 
+/*
 .nav-links2 a.router-link-active {
   background-color: var(--c-primary-color);
   color: #000;
+}
+*/
+.nav-links2 a {
+  height: 100%;
 }
 
 svg {

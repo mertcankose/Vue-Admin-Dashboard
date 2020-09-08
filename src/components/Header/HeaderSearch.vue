@@ -1,12 +1,15 @@
 <template>
   <form class="search">
-    <vs-input warn type="search" v-model="value" label="Search" />
+    <Card />
   </form>
 </template>
 
 <script>
+import Card from "../../components/Widgets/WidgetCard";
 export default {
-  components: {},
+  components: {
+    Card
+  },
   data() {
     return {
       value: ""
@@ -23,6 +26,7 @@ export default {
   align-items: center;
 
   input {
+    /*
     width: 215px;
     height: 28px;
     background-color: var(--c-search-background-color);
@@ -31,6 +35,7 @@ export default {
     padding-left: 20px;
     padding-right: 20px;
     outline: none;
+    */
   }
   @media (--t) {
     display: none;

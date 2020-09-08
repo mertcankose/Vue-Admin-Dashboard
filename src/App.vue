@@ -44,7 +44,7 @@ export default {
 .app {
   background-color: var(--c-primary-color);
   display: grid;
-  grid-template-columns: 15rem 1fr;
+  grid-template-columns: 210px 1fr;
   height: 100vh;
 
   @media (--t) {

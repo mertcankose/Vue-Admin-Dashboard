@@ -1,24 +1,24 @@
 <template>
   <div class="home-middle">
-    <SmallCard backcolor="var(--c-small-card-revinue)" color="var(--c-small-card-revinue-text)">
+    <SmallCard backcolor="var(--c-small-card-revinue)" color="var(--c-small-card-text-color)">
       <template slot="head">Revinue Status</template>
       <span slot="money">$432</span>
       <span slot="date" class="date">Jan01-Jan10</span>
     </SmallCard>
 
-    <SmallCard backcolor="var(--c-small-card-task)" color="var(--c-small-card-task-text)">
+    <SmallCard backcolor="var(--c-small-card-task)" color="var(--c-small-card-text-color)">
       <template slot="head">Task Completion</template>
       <span slot="money">$432</span>
       <span slot="date" class="date">Jan01-Jan10</span>
     </SmallCard>
 
-    <SmallCard backcolor="var(--c-small-card-rate)" color="var(--c-small-card-rate-text)">
+    <SmallCard backcolor="var(--c-small-card-rate)" color="var(--c-small-card-text-color)">
       <template slot="head">Bounce Rate</template>
       <span slot="money">$432</span>
       <span slot="date" class="date">Jan01-Jan10</span>
     </SmallCard>
 
-    <SmallCard backcolor="var(--c-small-card-request)" color="var(--c-small-card-request-text)">
+    <SmallCard backcolor="var(--c-small-card-request)" color="var(--c-small-card-text-color)">
       <template slot="head">Pending Request</template>
       <span slot="money">$432</span>
       <span slot="date" class="date">Jan01-Jan10</span>
@@ -39,7 +39,7 @@ export default {
 .home-middle {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 28px;
+  gap: 30px;
   @media (--t) {
     grid-template-columns: 1fr 1fr;
   }

@@ -49,12 +49,10 @@ const routes = [
       import(/* webpackChunkName: "About" */ "../views/profile/Profile"),
   },
   {
-    path: "/notification",
-    name: "Notification",
+    path: "/data",
+    name: "Data",
     component: () =>
-      import(
-        /* webpackChunkName: "Element" */ "../views/notification/Notification"
-      ),
+      import(/* webpackChunkName: "Element" */ "../views/Data/Data"),
   },
   {
     path: "/documentation",

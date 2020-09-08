@@ -1,4 +1,3 @@
-
 <template>
   <div class="center">
     <vs-table v-model="selected">
@@ -117,7 +116,7 @@ export default {
     search: "",
     allCheck: false,
     page: 1,
-    max: 6,
+    max: 5,
     active: 0,
     selected: [],
     users: [
@@ -287,7 +286,7 @@ export default {
         username: "Moriah.Stanton",
         email: "Rey.Padberg@karina.biz",
         website: "ambrose.net",
-        status: "Open"
+        status: "Process"
       },
       {
         id: 22,
@@ -303,7 +302,7 @@ export default {
         username: "Moriah.Stanton",
         email: "Rey.Padberg@karina.biz",
         website: "ambrose.net",
-        status: "Open"
+        status: "On Hold"
       },
       {
         id: 24,
@@ -317,5 +316,3 @@ export default {
   })
 };
 </script>
-
-        

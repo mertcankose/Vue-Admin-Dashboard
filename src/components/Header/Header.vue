@@ -1,8 +1,10 @@
 <template>
   <header class="header">
     <div>
-      <IconClose v-if="controlMenu" @click="toggleMenu"></IconClose>
-      <IconMenu v-else @click="toggleMenu"></IconMenu>
+      <vs-button @click="toggleMenu" circle icon color="#7890FF" relief :active="active == 5">
+        <IconClose v-if="controlMenu"></IconClose>
+        <IconMenu v-else></IconMenu>
+      </vs-button>
     </div>
 
     <Search />
@@ -13,7 +15,7 @@
 <script>
 //components
 import Search from "./HeaderSearch";
-import Right from "./HeaderRight";
+import Right from "./HeaderRight/HeaderRight";
 //icons
 import IconMenu from "../../icons/Hamburger.svg";
 import IconClose from "../../icons/Close.svg";
@@ -29,13 +31,15 @@ export default {
   },
   data() {
     return {
-      controlMenu: true
+      controlMenu: true,
+      active: 0
     };
   },
   methods: {
     toggleMenu() {
       this.controlMenu = !this.controlMenu;
       eventBus.reportNav(!this.controlMenu);
+      this.active = 5;
     }
   }
 };
@@ -60,9 +64,8 @@ export default {
   @media (--tl) {
   }
   svg {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
+    width: 20px;
+    height: 20px;
   }
 }
 </style>
