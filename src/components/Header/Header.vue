@@ -55,7 +55,7 @@ export default {
   position: sticky;
   top: 0;
   right: 0;
-  z-index: 99;
+  z-index: 9999;
   /*tablet*/
   @media (--t) {
     grid-template-columns: 5px 1fr;

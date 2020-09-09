@@ -1,6 +1,7 @@
 <template>
   <div class="activity-card">
-    <div class="card-header">Recent Activity</div>
+    <h1>Recent Activity</h1>
+    <hr />
     <div class="card-body">
       <div class="activity-item" v-for="(item,index) in items" :key="index">
         <div class="minute-circle">
@@ -69,11 +70,14 @@ export default {
   border-radius: 0.35rem;
   display: flex;
   flex-direction: column;
+  padding: 20px;
   @media (--t) {
-    width: 80%;
+    width: 100%;
   }
   @media (--tl) {
     width: 100%;
+    height: 450px;
+    overflow-y: auto;
   }
   .card-header {
     border-radius: 0.35rem 0.35rem 0 0;
@@ -81,7 +85,7 @@ export default {
     margin-bottom: 0;
     background-color: rgba(31, 45, 65, 0.03);
     border-bottom: 1px solid rgba(31, 45, 65, 0.125);
-    color: #0061f2;
+    color: #195bff;
     height: 3.5rem;
     display: flex;
     align-items: center;
@@ -113,6 +117,9 @@ export default {
         margin-right: 0.5rem;
         margin-bottom: 0;
         color: #a2acba;
+        @media (--tl) {
+          font-size: 0.8rem;
+        }
       }
       .circle {
         height: 0.875rem;
@@ -135,6 +142,7 @@ export default {
         color: #687281;
         @media (--tl) {
           padding-bottom: 1rem;
+          font-size: 0.8rem;
         }
       }
     }

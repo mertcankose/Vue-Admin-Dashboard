@@ -32,7 +32,7 @@ export default {
   grid-template-rows: 2.5fr 1fr 2.5fr;
   gap: 28px;
   @media (--t) {
-    grid-template-rows: 2fr 1fr 500px;
+    grid-template-rows: 1fr 1fr 500px;
   }
 }
 </style>

@@ -19,45 +19,58 @@
       class="dropdown-menu dropdown-menu-right scrollable-menu"
       aria-labelledby="dropdownMenuButton"
     >
-      <a class="dropdown-item" href="#">
-        <div class="svg-box svg-box-1">
-          <IconAnalysis />
-        </div>
-        <div class="dropdown-item-info">
-          <p>August 31,2020</p>
-          <p>This is an alert message. It's...</p>
-        </div>
-      </a>
+      <vs-button color="#fff" @click="openNotification1">
+        <a class="dropdown-item" href="#">
+          <div class="svg-box svg-box-1">
+            <IconAnalysis />
+          </div>
+          <div class="dropdown-item-info">
+            <p>{{items[0].date}}</p>
+            <p>{{items[0].content.slice(0,28)}}...</p>
+          </div>
+        </a>
+      </vs-button>
+
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">
-        <div class="svg-box svg-box-2">
-          <IconWarning />
-        </div>
-        <div class="dropdown-item-info">
-          <p>Augus 22,2020</p>
-          <p>A new monthly report is reas...</p>
-        </div>
-      </a>
+      <vs-button color="#fff" @click="openNotification2">
+        <a class="dropdown-item" href="#">
+          <div class="svg-box svg-box-2">
+            <IconWarning />
+          </div>
+          <div class="dropdown-item-info">
+            <p>{{items[1].date}}</p>
+            <p>{{items[1].content.slice(0,28)}}...</p>
+          </div>
+        </a>
+      </vs-button>
+
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">
-        <div class="svg-box svg-box-3">
-          <IconSignal />
-        </div>
-        <div class="dropdown-item-info">
-          <p>August 8,2020</p>
-          <p>Critical System Failure, syste...</p>
-        </div>
-      </a>
+
+      <vs-button color="#fff" @click="openNotification3">
+        <a class="dropdown-item" href="#">
+          <div class="svg-box svg-box-3">
+            <IconSignal />
+          </div>
+          <div class="dropdown-item-info">
+            <p>{{items[2].date}}</p>
+            <p>{{items[2].content.slice(0,28)}}...</p>
+          </div>
+        </a>
+      </vs-button>
+
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">
-        <div class="svg-box svg-box-4">
-          <IconChartDown />
-        </div>
-        <div class="dropdown-item-info">
-          <p>August 8,2020</p>
-          <p>Critical System Failure, syste...</p>
-        </div>
-      </a>
+
+      <vs-button color="#fff" @click="openNotification4">
+        <a class="dropdown-item" href="#">
+          <div class="svg-box svg-box-4">
+            <IconChartDown />
+          </div>
+          <div class="dropdown-item-info">
+            <p>{{items[3].date}}</p>
+            <p>{{items[3].content.slice(0,28)}}...</p>
+          </div>
+        </a>
+      </vs-button>
     </div>
   </div>
 </template>
@@ -69,9 +82,55 @@ import IconSignal from "../../../icons/Signal.svg";
 import IconWarning from "../../../icons/Warning.svg";
 import IconChartDown from "../../../icons/ChartDown.svg";
 export default {
+  methods: {
+    openNotification1() {
+      this.$vs.notification({
+        title: this.items[0].date,
+        text: `${this.items[0].content} 👉`
+      });
+    },
+    openNotification2() {
+      this.$vs.notification({
+        title: this.items[1].date,
+        text: `${this.items[1].content} 👉`
+      });
+    },
+    openNotification3() {
+      this.$vs.notification({
+        title: this.items[2].date,
+        text: `${this.items[2].content} 👉`
+      });
+    },
+    openNotification4() {
+      this.$vs.notification({
+        title: this.items[3].date,
+        text: `${this.items[3].content} 👉`
+      });
+    }
+  },
   data() {
     return {
-      active: 0
+      active: 0,
+      items: [
+        {
+          date: "August 31,2020",
+          content: "This is an alert message. It's so complicated problem"
+        },
+        {
+          date: "August 22,2020",
+          content:
+            "A new monthly report is released last week. If you want to see go to the new"
+        },
+        {
+          date: "August 8,2020",
+          content:
+            "Spending Alert: We've noticed unusually high spending for your account."
+        },
+        {
+          date: "August 8,2020",
+          content: "A new monthly report is ready to download!"
+        }
+      ]
     };
   },
   components: {
@@ -94,7 +153,7 @@ svg {
 }
 .scrollable-menu {
   height: auto;
-  max-height: 200px;
+  max-height: 210px;
   overflow-x: hidden;
 }
 .dropdown-menu {

@@ -1,0 +1,110 @@
+<template>
+  <div class="card-box">
+    <vs-card-group class="card-box">
+      <vs-card class="card-item" v-for="(card,index) in cards" :key="index">
+        <template #title>
+          <h3>{{card.title}}</h3>
+        </template>
+        <template #img>
+          <img height="220" :src="card.image" alt />
+        </template>
+        <template #text>
+          <p>{{card.content}}</p>
+        </template>
+        <template #interactions>
+          <vs-button danger icon>
+            <IconWarning class="warning-icon" />
+          </vs-button>
+          <vs-button class="btn-chat" shadow primary>
+            <IconAnalysis class="analysis-icon" />
+            <span class="span">{{card.warning}}</span>
+          </vs-button>
+        </template>
+      </vs-card>
+    </vs-card-group>
+  </div>
+</template>
+
+<script>
+import IconWarning from "../../icons/Warning.svg";
+import IconAnalysis from "../../icons/Analysis.svg";
+export default {
+  components: {
+    IconWarning,
+    IconAnalysis
+  },
+  data() {
+    return {
+      cards: [
+        {
+          title: "Cyber Security",
+          content: "Cyber Security Field",
+          image:
+            "https://innovationatwork.ieee.org/wp-content/uploads/2019/11/bigstock-Internet-Security-Firewall-Or-326464240_1024X684.png",
+          warning: "10"
+        },
+        {
+          title: "Network",
+          content: "Network Systems",
+          image: "https://www.fgdc.gov/img/slider/slider-bg-network.jpg/image",
+          warning: "14"
+        },
+        {
+          title: "Malware",
+          content: "Malware Analysis",
+          image:
+            "https://internationalsecurityjournal.com/wp-content/uploads/2020/03/shutterstock_1378498490.jpg",
+          warning: "26"
+        },
+        {
+          title: "Cyber Security",
+          content: "Cyber Security",
+          image:
+            "https://images.yourstory.com/cs/1/b3cc3444ab5e11e88691f70342131e20/Whatissoftwareandtypesofsoftwarewithexamples1575272423828jpg",
+          warning: "36"
+        },
+        {
+          title: "Servers",
+          content: "Database and Servers",
+          image:
+            "https://www.teknotel.com/blog/wp-content/uploads/2019/03/dedicated-server-kullanimi-1080x720.jpg",
+          warning: "62"
+        },
+        {
+          title: "Computer",
+          content: "Intelligence Software Solutions",
+          image:
+            "https://www.evernex.com/wp-content/uploads/2016/10/Untitled-1-1.jpg",
+          warning: "8"
+        }
+      ]
+    };
+  }
+};
+</script>
+
+<style scoped lang="postcss">
+.card-box {
+  width: 1300px;
+  div {
+  }
+  @media (--t) {
+  }
+  @media (--tl) {
+    width: 250px;
+    img {
+    }
+  }
+}
+
+.warning-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+}
+.analysis-icon {
+  width: 20px;
+  height: 20px;
+  color: red;
+}
+</style>

@@ -1,15 +1,12 @@
 <template>
   <form class="search">
-    <Card />
+    <vs-input icon-after icon="search" placeholder="Search" v-model="value" />
   </form>
 </template>
 
 <script>
-import Card from "../../components/Widgets/WidgetCard";
 export default {
-  components: {
-    Card
-  },
+  components: {},
   data() {
     return {
       value: ""

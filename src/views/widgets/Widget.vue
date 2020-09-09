@@ -1,9 +1,9 @@
 <template>
   <div class="widget">
     <CustomText tag="h1">Widget</CustomText>
-    <Card />
+
     <div class="nav">
-      <router-link class="module" to="/widgets/">Module</router-link>
+      <router-link class="module" to="/widgets">Module</router-link>
       <router-link class="data" to="/widgets/data">Data</router-link>
       <router-link class="file" to="/widgets/file">File</router-link>
     </div>
@@ -14,12 +14,11 @@
 
 <script>
 import CustomText from "@/components/Helpers/CustomText";
-import Card from "../../components/Widgets/WidgetCard";
+
 export default {
   name: "Widget",
   components: {
-    CustomText,
-    Card
+    CustomText
   }
 };
 </script>

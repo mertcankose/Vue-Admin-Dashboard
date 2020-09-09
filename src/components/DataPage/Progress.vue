@@ -1,6 +1,7 @@
 <template>
   <div class="box">
-    <div class="header">Progress Tracker</div>
+    <h1>Progress Tracker</h1>
+    <hr />
     <div class="body">
       <div class="item" v-for="(item,index) in items" :key="index">
         <h4 class="small">
@@ -63,16 +64,27 @@ export default {
 .box {
   width: 500px;
   background-color: #fff;
-  font-size: 18px;
-  .header {
-    padding: 10px 30px;
-    background-color: rgba(31, 45, 65, 0.03);
-    border-bottom: 1px solid rgba(31, 45, 65, 0.125);
-    color: #0061f2;
-    height: 3.8rem;
+  border: 1px solid rgba(31, 45, 65, 0.125);
+
+  padding: 20px;
+  @media (--t) {
+    width: 100%;
+    font-size: 16px;
   }
+  @media (--tl) {
+    width: 100%;
+    height: 450px;
+    font-size: 14px;
+  }
+
   .body {
-    padding: 10px 30px;
+    font-size: 18px;
+    @media (--t) {
+      font-size: 16px;
+    }
+    @media (--tl) {
+      font-size: 14px;
+    }
   }
   .item {
     display: flex;
@@ -90,11 +102,17 @@ export default {
     height: 14px;
     background-color: #ccc;
     border-radius: 10px;
+    @media (--t) {
+      height: 10px;
+    }
 
     .progress-bar {
       width: 100%;
       height: 14px;
       border-radius: 10px;
+      @media (--t) {
+        height: 10px;
+      }
     }
   }
 }

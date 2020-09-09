@@ -1,13 +1,29 @@
 <template>
-  <apexchart width="50%" type="donut" :options="options" :series="series"></apexchart>
+  <div id="chart">
+    <apexchart type="donut" height="320" :options="options" :series="series"></apexchart>
+  </div>
 </template>
 <script>
 export default {
   name: "HelloWorld",
   data: () => ({
+    series: [34, 55, 11],
+    responsive: [
+      {
+        breakpoint: undefined,
+        options: {}
+      }
+    ],
     options: {
       chart: {
-        id: "vuechart-example"
+        type: "donut"
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: "65%"
+          }
+        }
       },
       dataLabels: {
         enabled: true
@@ -18,15 +34,13 @@ export default {
         position: "bottom",
         horizontalAlign: "center",
         fontSize: "18px",
-        height: 50,
+        height: -10,
         itemMargin: {
           horizontal: 10,
           vertical: 0
         }
       }
-    },
-
-    series: [34, 55, 11]
+    }
   })
 };
 </script>
