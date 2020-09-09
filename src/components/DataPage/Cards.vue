@@ -91,7 +91,7 @@ export default {
   @media (--t) {
   }
   @media (--tl) {
-    width: 250px;
+    width: 220px;
     img {
     }
   }
