@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import Table from "../../components/HomePage/Table";
+import Table from "../../components/HomePage/Table"
 export default {
   components: {
     Table
   }
-};
+}
 </script>
 
 <style scoepd lang="postcss">
@@ -21,7 +21,6 @@ export default {
   grid-template-columns: 1fr;
   gap: 28px;
   @media (--t) {
-    grid-template-columns: 1fr;
   }
   .table-box {
     //background-color: var(--c-box-background-color);

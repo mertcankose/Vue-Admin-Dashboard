@@ -23,7 +23,9 @@ export default {
     ],
     options: {
       chart: {
-        type: "donut"
+        type: "donut",
+        height: "auto",
+        width: "100%"
       },
       plotOptions: {
         pie: {
@@ -42,6 +44,7 @@ export default {
         horizontalAlign: "center",
         fontSize: "16px",
         height: 0,
+        offsetY: -5,
         itemMargin: {
           horizontal: 10,
           vertical: 0
@@ -49,21 +52,6 @@ export default {
       }
     }
   })
-};
+}
 </script>
-<style scoped lang="postcss">
-.container {
-  position: relative;
-  height: 0;
-  padding-top: 50%;
-}
-.item {
-  position: Absolute;
-  left: 0;
-  top: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-</style>
-
-
+<style scoped lang="postcss"></style>

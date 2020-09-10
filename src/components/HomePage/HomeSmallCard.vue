@@ -1,9 +1,9 @@
 <template>
-  <div class="card" :style="{ backgroundColor: backcolor,}">
+  <div class="card" :style="{ backgroundColor: backcolor }">
     <CustomText size="big">
       <slot name="head" />
     </CustomText>
-    <div class="card-body" :style="{color:color}">
+    <div class="card-body" :style="{ color: color }">
       <IconChartBar />
       <div class="card-number">
         <div class="card-number-1">
@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import IconChartBar from "../../icons/ChartBar.svg";
-import IconArrowUp from "../../icons/ArrowUp.svg";
-import CustomText from "../Helpers/CustomText";
+import IconChartBar from "../../icons/ChartBar.svg"
+import IconArrowUp from "../../icons/ArrowUp.svg"
+import CustomText from "../Helpers/CustomText"
 export default {
   props: {
     backcolor: {
@@ -38,7 +38,7 @@ export default {
     IconArrowUp,
     CustomText
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">

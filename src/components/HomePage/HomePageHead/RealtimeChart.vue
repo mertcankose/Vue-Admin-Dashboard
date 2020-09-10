@@ -1,6 +1,12 @@
 <template>
   <div id="chart">
-    <apexchart type="line" :options="chartOptions" :series="series"></apexchart>
+    <apexchart
+      class="item"
+      type="line"
+      height="450"
+      :options="chartOptions"
+      :series="series"
+    ></apexchart>
   </div>
 </template>
 
@@ -22,9 +28,10 @@ export default {
           color: "#f33921"
         }
       ],
+
       chartOptions: {
         chart: {
-          height: "auto",
+          width: "100%",
           type: "line"
         },
         stroke: {
@@ -68,12 +75,21 @@ export default {
           }
         ]
       }
-    };
+      /*
+      responsive: [
+        {
+          breakpoint: 500,
+          options: {
+            chart: {
+              height: "400"
+            }
+          }
+        }
+      ]
+      */
+    }
   }
-};
+}
 </script>
 
-<style scoped lang="postcss">
-#chart {
-}
-</style>
+<style scoped lang="postcss"></style>

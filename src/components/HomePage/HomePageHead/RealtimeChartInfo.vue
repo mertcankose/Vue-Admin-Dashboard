@@ -1,18 +1,30 @@
 <template>
   <div class="infos">
     <div class="header-box">
-      <CustomText tag="h2" size="normal" class="header-box-header">Dashboard</CustomText>
-      <CustomText tag="p" size="small" class="header-box-info">Overview of Latest Month</CustomText>
+      <CustomText tag="h2" size="normal" class="header-box-header"
+        >Dashboard</CustomText
+      >
+      <CustomText tag="p" size="small" class="header-box-info"
+        >Overview of Latest Month</CustomText
+      >
     </div>
 
     <div class="earning-box">
-      <CustomText tag="span" size="huge" class="earning-box-money">$3468</CustomText>
-      <CustomText tag="p" size="small" class="earning-box-info">Current Month Earnings From Attacks</CustomText>
+      <CustomText tag="span" size="huge" class="earning-box-money"
+        >$3468</CustomText
+      >
+      <CustomText tag="p" size="small" class="earning-box-info"
+        >Current Month Earnings From Attacks</CustomText
+      >
     </div>
 
     <div class="defense-box">
-      <CustomText tag="span" size="huge" class="defense-box-defense">82</CustomText>
-      <CustomText tag="p" size="small" class="defense-box-info">Current Month Defense</CustomText>
+      <CustomText tag="span" size="huge" class="defense-box-defense"
+        >82</CustomText
+      >
+      <CustomText tag="p" size="small" class="defense-box-info"
+        >Current Month Defense</CustomText
+      >
     </div>
 
     <button class="summary-button">Last Month Summary</button>
@@ -20,12 +32,13 @@
 </template>
 
 <script>
-import CustomText from "../../Helpers/CustomText";
+import CustomText from "../../Helpers/CustomText"
+
 export default {
   components: {
     CustomText
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
@@ -35,7 +48,7 @@ p {
 .infos {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-right: 24px;
   .header-box {
     &-header {
