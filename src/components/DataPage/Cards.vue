@@ -1,12 +1,12 @@
 <template>
-  <div class="card-box">
+  <div class="cards-container">
     <vs-card-group class="card-box">
       <vs-card class="card-item" v-for="(card,index) in cards" :key="index">
         <template #title>
           <h3>{{card.title}}</h3>
         </template>
         <template #img>
-          <img height="220" :src="card.image" alt />
+          <img height="170" :src="card.image" alt />
         </template>
         <template #text>
           <p>{{card.content}}</p>
@@ -84,27 +84,30 @@ export default {
 </script>
 
 <style scoped lang="postcss">
-.card-box {
-  width: 1300px;
-  div {
-  }
+.cards-container {
+  max-width: 1100px;
   @media (--t) {
+    max-width: 400px;
   }
   @media (--tl) {
-    width: 220px;
-    img {
-    }
+    max-width: 180px;
+  }
+}
+.card-box {
+  @media (--tl) {
+  }
+  .card-item {
   }
 }
 
 .warning-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   color: #fff;
 }
 .analysis-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   color: red;
 }
 </style>

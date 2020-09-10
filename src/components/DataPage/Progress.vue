@@ -62,19 +62,14 @@ export default {
 
 <style scoped lang="postcss">
 .box {
-  width: 500px;
   background-color: #fff;
   border: 1px solid rgba(31, 45, 65, 0.125);
-
   padding: 20px;
   @media (--t) {
-    width: 100%;
-    font-size: 16px;
+    padding: 10px;
   }
   @media (--tl) {
-    width: 100%;
     height: 450px;
-    font-size: 14px;
   }
 
   .body {

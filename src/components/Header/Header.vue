@@ -59,9 +59,11 @@ export default {
   /*tablet*/
   @media (--t) {
     grid-template-columns: 5px 1fr;
+    height: 80px;
   }
   /*mobile*/
   @media (--tl) {
+    height: 74px;
   }
   svg {
     width: 20px;

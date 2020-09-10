@@ -63,7 +63,6 @@ export default {
 
 <style scoped lang="postcss">
 .activity-card {
-  width: 500px;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(31, 45, 65, 0.125);
@@ -72,10 +71,8 @@ export default {
   flex-direction: column;
   padding: 20px;
   @media (--t) {
-    width: 100%;
   }
   @media (--tl) {
-    width: 100%;
     height: 450px;
     overflow-y: auto;
   }

@@ -1,6 +1,13 @@
 <template>
-  <div id="chart">
-    <apexchart type="donut" height="320" :options="options" :series="series"></apexchart>
+  <div id="chart" class="container">
+    <apexchart
+      class="item"
+      type="donut"
+      width="100%"
+      height="300"
+      :options="options"
+      :series="series"
+    ></apexchart>
   </div>
 </template>
 <script>
@@ -33,8 +40,8 @@ export default {
       legend: {
         position: "bottom",
         horizontalAlign: "center",
-        fontSize: "18px",
-        height: -10,
+        fontSize: "16px",
+        height: 0,
         itemMargin: {
           horizontal: 10,
           vertical: 0
@@ -45,6 +52,18 @@ export default {
 };
 </script>
 <style scoped lang="postcss">
+.container {
+  position: relative;
+  height: 0;
+  padding-top: 50%;
+}
+.item {
+  position: Absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
 </style>
 
 

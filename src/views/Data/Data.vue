@@ -33,19 +33,22 @@ export default {
 .data {
   display: grid;
   grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr;
   @media (--t) {
     grid-template-rows: 400px 2fr;
   }
-
   .header {
     font-size: 30px;
     font-weight: bold;
   }
   .cards {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     @media (--t) {
+    }
+    @media (--tl) {
     }
   }
 }
@@ -54,9 +57,10 @@ export default {
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
+  gap: 20px;
   @media (--t) {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
   @media (--tl) {
     grid-template-columns: 1fr;

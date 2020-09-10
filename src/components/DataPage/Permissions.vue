@@ -93,21 +93,16 @@ export default {
 };
 </script>
   <style lang="postcss" scoped>
-svg {
-  width: 15px;
-  height: 15px;
-}
-.check-icon {
-  color: #fff;
-}
 .con-switch {
   display: flex;
   flex-direction: column;
   padding: 20px;
   background-color: #fff;
   border: 1px solid rgba(31, 45, 65, 0.125);
+  @media (--t) {
+  }
   @media (--tl) {
-    width: 100%;
+    padding: 10px;
   }
   ul {
     width: 100%;
@@ -130,6 +125,13 @@ svg {
   >>> .vs-switch {
     margin: 5px;
   }
+}
+svg {
+  width: 15px;
+  height: 15px;
+}
+.check-icon {
+  color: #fff;
 }
 .con-selects {
   margin-top: 80px;
