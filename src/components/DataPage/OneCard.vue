@@ -5,7 +5,7 @@
         <h3>{{ card.title }}</h3>
       </template>
       <template #img>
-        <img :src="card.image" height="150" alt="" />
+        <img :src="card.image" height="160" alt="" />
       </template>
       <template #text>
         <p>
@@ -86,7 +86,7 @@ export default {
         },
         {
           title: "Computer",
-          content: "Intelligence Software Solutions",
+          content: "Intelligence Software",
           image: "https://www.evernex.com/wp-content/uploads/2016/10/Untitled-1-1.jpg",
           warning: "8"
         }
