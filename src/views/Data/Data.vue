@@ -2,7 +2,7 @@
   <div class="data">
     <div class="cards">
       <h1>Systems</h1>
-      <OneCard />
+      <Cards />
     </div>
     <div class="boxes">
       <ActivityCard />
@@ -15,8 +15,7 @@
 <script>
 import ActivityCard from "../../components/DataPage/Activity"
 import Progress from "../../components/DataPage/Progress"
-//import Cards from "../../components/DataPage/Cards";
-import OneCard from "../../components/DataPage/OneCard"
+import Cards from "../../components/DataPage/Cards"
 import Permissions from "../../components/DataPage/Permissions"
 
 export default {
@@ -24,9 +23,8 @@ export default {
   components: {
     ActivityCard,
     Progress,
-    //Cards,
     Permissions,
-    OneCard
+    Cards
   }
 }
 </script>
@@ -43,16 +41,12 @@ export default {
     font-size: 30px;
     font-weight: bold;
   }
-  .cards {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    @media (--t) {
-    }
-    @media (--tl) {
-    }
-  }
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 .boxes {

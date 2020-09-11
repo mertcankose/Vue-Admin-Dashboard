@@ -1,9 +1,7 @@
 <template>
   <nav class="nav-right">
     <Home />
-
     <Message />
-
     <Notification />
     <Profile />
   </nav>
@@ -13,10 +11,10 @@
 //icons
 
 //components
-import Home from "./HeaderHome";
-import Message from "./HeaderMessage";
-import Notification from "./HeaderNotify";
-import Profile from "./HeaderAvatar";
+import Home from "./HeaderHome"
+import Message from "./HeaderMessage"
+import Notification from "./HeaderNotify"
+import Profile from "./HeaderAvatar"
 
 //import Avatar from "./HeaderAvatar";
 
@@ -24,7 +22,7 @@ export default {
   data() {
     return {
       active: 0
-    };
+    }
   },
   components: {
     Home,
@@ -32,7 +30,7 @@ export default {
     Notification,
     Profile
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">

@@ -1,4 +1,3 @@
-
 <template>
   <div class="center con-switch">
     <h1>Permissions</h1>
@@ -52,7 +51,12 @@
         <vs-option label="Webpack" value="6">Webpack</vs-option>
         <vs-option label="Nodejs" value="7">Nodejs</vs-option>
       </vs-select>
-      <vs-select class="options" label="Options" placeholder="Placeholder" v-model="value3">
+      <vs-select
+        class="options"
+        label="Options"
+        placeholder="Placeholder"
+        v-model="value3"
+      >
         <vs-option label="Vuesax" value="1">Vuesax</vs-option>
         <vs-option label="Vue" value="2">Vue</vs-option>
         <vs-option label="Javascript" value="3">Javascript</vs-option>
@@ -65,11 +69,11 @@
   </div>
 </template>
 <script>
-import IconMoon from "../../icons/Moon.svg";
-import IconSun from "../../icons/Sun.svg";
-import IconComment from "../../icons/Comment.svg";
-import IconCheck from "../../icons/Check.svg";
-import IconClose from "../../icons/Close.svg";
+import IconMoon from "../../icons/Moon.svg"
+import IconSun from "../../icons/Sun.svg"
+import IconComment from "../../icons/Comment.svg"
+import IconCheck from "../../icons/Check.svg"
+import IconClose from "../../icons/Close.svg"
 
 export default {
   components: {
@@ -90,24 +94,21 @@ export default {
     value2: "",
     value3: ""
   })
-};
+}
 </script>
-  <style lang="postcss" scoped>
+<style lang="postcss" scoped>
 .con-switch {
   display: flex;
   flex-direction: column;
   padding: 20px;
   background-color: #fff;
   border: 1px solid rgba(31, 45, 65, 0.125);
-  @media (--t) {
-  }
   @media (--tl) {
     padding: 10px;
   }
   ul {
     width: 100%;
     padding: 0px;
-
     li {
       width: 100%;
       display: flex;
@@ -115,13 +116,11 @@ export default {
       justify-content: space-between;
       padding: 0px;
       margin-top: 20px;
-
       p {
         margin: 0px;
       }
     }
   }
-
   >>> .vs-switch {
     margin: 5px;
   }
@@ -144,4 +143,3 @@ svg {
   }
 }
 </style>
-        

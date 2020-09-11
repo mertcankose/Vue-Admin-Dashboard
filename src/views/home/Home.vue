@@ -31,8 +31,6 @@ export default {
   display: grid;
   grid-template-rows: 2.4fr 0.8fr 2.1fr;
   gap: 28px;
-  @media (--t) {
-  }
   @media (--tl) {
     display: flex;
     flex-direction: column;

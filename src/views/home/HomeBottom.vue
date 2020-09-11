@@ -20,16 +20,11 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   gap: 28px;
-  @media (--t) {
-  }
   .table-box {
-    //background-color: var(--c-box-background-color);
     border-radius: 14px;
     @media (--t) {
       overflow-x: auto;
     }
-  }
-  div {
   }
 }
 </style>

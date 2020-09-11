@@ -3,12 +3,12 @@
     <h1>Recent Activity</h1>
     <hr />
     <div class="card-body">
-      <div class="activity-item" v-for="(item,index) in items" :key="index">
+      <div class="activity-item" v-for="(item, index) in items" :key="index">
         <div class="minute-circle">
-          <div class="minute">{{item.minute}}</div>
-          <div class="circle" :style="{backgroundColor:item.color}"></div>
+          <div class="minute">{{ item.minute }}</div>
+          <div class="circle" :style="{ backgroundColor: item.color }"></div>
         </div>
-        <div class="content">{{item.content}}</div>
+        <div class="content">{{ item.content }}</div>
       </div>
     </div>
   </div>
@@ -47,8 +47,7 @@ export default {
         {
           minute: "1 day",
           color: "purple",
-          content:
-            "Details for Marketing and Planning Meeting have been updated."
+          content: "Details for Marketing and Planning Meeting have been updated."
         },
         {
           minute: "2 day",
@@ -56,9 +55,9 @@ export default {
           content: "New order placed! Order #2910 has been successfully placed."
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
@@ -70,8 +69,6 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  @media (--t) {
-  }
   @media (--tl) {
     height: 450px;
     overflow-y: auto;
@@ -94,7 +91,6 @@ export default {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1.35rem;
-
     .activity-item {
       display: flex;
       align-items: flex-start;

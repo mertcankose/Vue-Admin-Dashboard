@@ -1,7 +1,14 @@
 <template>
   <header class="header">
     <div>
-      <vs-button @click="toggleMenu" circle icon color="#7890FF" relief :active="active == 5">
+      <vs-button
+        @click="toggleMenu"
+        circle
+        icon
+        color="#7890FF"
+        relief
+        :active="active == 5"
+      >
         <IconClose v-if="controlMenu"></IconClose>
         <IconMenu v-else></IconMenu>
       </vs-button>
@@ -14,13 +21,13 @@
 
 <script>
 //components
-import Search from "./HeaderSearch";
-import Right from "./HeaderRight/HeaderRight";
+import Search from "./HeaderSearch"
+import Right from "./HeaderRight/HeaderRight"
 //icons
-import IconMenu from "../../icons/Hamburger.svg";
-import IconClose from "../../icons/Close.svg";
+import IconMenu from "../../icons/Hamburger.svg"
+import IconClose from "../../icons/Close.svg"
 //eventBus
-import { eventBus } from "../../main";
+import { eventBus } from "../../main"
 export default {
   name: "Header",
   components: {
@@ -33,16 +40,16 @@ export default {
     return {
       controlMenu: true,
       active: 0
-    };
+    }
   },
   methods: {
     toggleMenu() {
-      this.controlMenu = !this.controlMenu;
-      eventBus.reportNav(!this.controlMenu);
-      this.active = 5;
+      this.controlMenu = !this.controlMenu
+      eventBus.reportNav(!this.controlMenu)
+      this.active = 5
     }
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
@@ -65,9 +72,9 @@ export default {
   @media (--tl) {
     height: 74px;
   }
-  svg {
-    width: 20px;
-    height: 20px;
-  }
+}
+svg {
+  width: 20px;
+  height: 20px;
 }
 </style>

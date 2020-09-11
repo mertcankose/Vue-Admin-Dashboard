@@ -1,6 +1,6 @@
 <template>
   <form class="search">
-    <vs-input icon-after icon="search" placeholder="Search" v-model="value" />
+    <vs-input warn icon-after icon="search" placeholder="Search" v-model="value" />
   </form>
 </template>
 
@@ -10,9 +10,9 @@ export default {
   data() {
     return {
       value: ""
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">

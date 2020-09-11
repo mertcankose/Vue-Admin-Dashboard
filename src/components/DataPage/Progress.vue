@@ -3,17 +3,17 @@
     <h1>Progress Tracker</h1>
     <hr />
     <div class="body">
-      <div class="item" v-for="(item,index) in items" :key="index">
+      <div class="item" v-for="(item, index) in items" :key="index">
         <h4 class="small">
-          {{item.name}}
-          <span class="ratio" v-if="item.ratio != '100'">{{item.ratio}}%</span>
+          {{ item.name }}
+          <span class="ratio" v-if="item.ratio != '100'">{{ item.ratio }}%</span>
           <span v-else class="ratio">Complete!</span>
         </h4>
         <div class="progress">
           <div
             class="progress-bar"
             role="progressbar"
-            :style="{backgroundColor:item.color, width:item.ratio + '%'}"
+            :style="{ backgroundColor: item.color, width: item.ratio + '%' }"
             aria-valuenow="item.ratio"
             aria-valuemin="0"
             aria-valuemax="100"
@@ -55,9 +55,9 @@ export default {
           color: "#00AC69"
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
@@ -71,7 +71,6 @@ export default {
   @media (--tl) {
     height: 450px;
   }
-
   .body {
     font-size: 18px;
     @media (--t) {
@@ -100,7 +99,6 @@ export default {
     @media (--t) {
       height: 10px;
     }
-
     .progress-bar {
       width: 100%;
       height: 14px;

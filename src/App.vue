@@ -1,6 +1,6 @@
 <template>
-  <div class="app" :class="{'active':menuClicked}">
-    <Navigation class="nav"></Navigation>
+  <div class="app" :class="{ active: menuClicked }">
+    <Navigation class="nav-section"></Navigation>
     <div class="header_main">
       <Header></Header>
       <Container class="container">
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import Navigation from "@/components/Navigation/Navigation";
-import Header from "./components/Header/Header";
-import Content from "./components/Content/Content";
-import Container from "./components/Helpers/Container";
+import Navigation from "@/components/Navigation/Navigation"
+import Header from "./components/Header/Header"
+import Content from "./components/Content/Content"
+import Container from "./components/Helpers/Container"
 //eventBus
-import { eventBus } from "./main";
+import { eventBus } from "./main"
 export default {
   name: "App",
   components: {
@@ -30,14 +30,14 @@ export default {
   data() {
     return {
       menuClicked: false
-    };
+    }
   },
   created() {
     eventBus.$on("clickedMenu", value => {
-      this.menuClicked = value;
-    });
+      this.menuClicked = value
+    })
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
@@ -55,11 +55,12 @@ export default {
   }
 }
 
-.app.active {
+.active {
   grid-template-columns: 0px 1fr;
 
-  .nav {
-    position: sticky;
+  .nav-section {
+    position: relative;
+    height: auto;
     top: 0;
     left: 0;
     bottom: 0;

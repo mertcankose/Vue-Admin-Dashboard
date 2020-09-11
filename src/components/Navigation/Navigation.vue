@@ -72,21 +72,21 @@
 
 <script>
 //icons
-import IconHome from "../../icons/Home.svg";
-import IconDocumentation from "../../icons/Table.svg";
-import IconForm from "../../icons/Saved.svg";
-import IconSettings from "../../icons/Settings.svg";
-import IconPerson from "../../icons/Person.svg";
-import IconCompass from "../../icons/Compass.svg";
-import IconFace from "../../icons/Face.svg";
-import IconMail from "../../icons/Email.svg";
-import IconCalendar from "../../icons/Calendar.svg";
-import IconCamera from "../../icons/Camera.svg";
-import IconData from "../../icons/Data.svg";
+import IconHome from "../../icons/Home.svg"
+import IconDocumentation from "../../icons/Table.svg"
+import IconForm from "../../icons/Saved.svg"
+import IconSettings from "../../icons/Settings.svg"
+import IconPerson from "../../icons/Person.svg"
+import IconCompass from "../../icons/Compass.svg"
+import IconFace from "../../icons/Face.svg"
+import IconMail from "../../icons/Email.svg"
+import IconCalendar from "../../icons/Calendar.svg"
+import IconCamera from "../../icons/Camera.svg"
+import IconData from "../../icons/Data.svg"
 //components
-import CustomText from "../Helpers/CustomText";
+import CustomText from "../Helpers/CustomText"
 //eventBus
-import { eventBus } from "../../main";
+import { eventBus } from "../../main"
 
 export default {
   name: "Navigation",
@@ -110,58 +110,56 @@ export default {
       windowHeight: undefined,
       showAndHide: true,
       clickedMenu: false
-    };
+    }
   },
   created() {
     eventBus.$on("clickedMenu", value => {
-      this.clickedMenu = value;
-    });
-    console.log(this.$route.params);
+      this.clickedMenu = value
+    })
+    console.log(this.$route.params)
   },
 
   mounted() {
     this.$nextTick(function() {
-      window.addEventListener("resize", this.getWindowWidth);
-      window.addEventListener("resize", this.getWindowHeight);
+      window.addEventListener("resize", this.getWindowWidth)
+      window.addEventListener("resize", this.getWindowHeight)
 
       //Init
-      this.getWindowWidth();
-      this.getWindowHeight();
-    });
+      this.getWindowWidth()
+      this.getWindowHeight()
+    })
   },
 
   methods: {
     getWindowWidth() {
-      this.windowWidth = document.documentElement.clientWidth;
+      this.windowWidth = document.documentElement.clientWidth
     },
 
     getWindowHeight() {
-      this.windowHeight = document.documentElement.clientHeight;
+      this.windowHeight = document.documentElement.clientHeight
     }
   },
   watch: {
     windowWidth: function() {
       if (this.windowWidth <= 973) {
-        this.showAndHide = false;
+        this.showAndHide = false
       } else {
-        this.showAndHide = true;
+        this.showAndHide = true
       }
     }
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.getWindowWidth);
-    window.removeEventListener("resize", this.getWindowHeight);
+    window.removeEventListener("resize", this.getWindowWidth)
+    window.removeEventListener("resize", this.getWindowHeight)
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
 .navigation {
   background-color: #fff;
-  //background-color: var(--c-nav-background-color);
   display: flex;
   flex-direction: column;
-
   color: #000;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 20px;
@@ -169,8 +167,6 @@ export default {
   transition: all 0.2s;
   transform: translateX(0);
   opacity: 1;
-  @media (--tl) {
-  }
 }
 .active {
   transform: translateX(-100%);
@@ -213,12 +209,6 @@ export default {
   }
 }
 
-/*
-.nav-links2 a.router-link-active {
-  background-color: var(--c-primary-color);
-  color: #000;
-}
-*/
 .nav-links2 a {
   height: 100%;
 }

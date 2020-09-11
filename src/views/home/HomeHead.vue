@@ -35,11 +35,8 @@ export default {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 20px;
-
   @media (--t) {
     grid-template-columns: 1fr;
-  }
-  @media (--tl) {
   }
 }
 .realtime-graph-and-info-box {
@@ -47,7 +44,6 @@ export default {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-
   @media (--t) {
     flex-direction: column;
     height: 900px;
@@ -56,18 +52,18 @@ export default {
   @media (--tl) {
     gap: 0;
   }
-}
-.relatime-chart-info {
-  display: flex;
-  justify-content: space-between;
-  @media (--tl) {
-    margin-bottom: 50px;
+  .relatime-chart-info {
+    display: flex;
+    justify-content: space-between;
+    @media (--tl) {
+      margin-bottom: 50px;
+    }
   }
-}
-.realtime-chart {
-  width: 100%;
-  @media (--tl) {
-    overflow-x: auto;
+  .realtime-chart {
+    width: 100%;
+    @media (--tl) {
+      overflow-x: auto;
+    }
   }
 }
 .donut-graph-and-h1-box {
@@ -76,14 +72,13 @@ export default {
   @media (--tl) {
     height: 400px;
   }
-
   h1 {
     padding-top: 10px;
     padding-left: 10px;
     margin-bottom: 36px;
   }
-}
-.donut-box {
-  width: 100%;
+  .donut-box {
+    width: 100%;
+  }
 }
 </style>

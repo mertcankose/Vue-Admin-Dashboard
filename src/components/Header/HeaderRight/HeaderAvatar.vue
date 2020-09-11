@@ -10,10 +10,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
-<style scoped lang="postcss">
-img {
-}
-</style>
+<style scoped lang="postcss"></style>

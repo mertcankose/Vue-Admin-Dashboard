@@ -1,40 +1,54 @@
 <template>
-  <div class="cards-container">
-    <vs-card-group class="card-box">
-      <vs-card class="card-item" v-for="(card,index) in cards" :key="index">
-        <template #title>
-          <h3>{{card.title}}</h3>
-        </template>
-        <template #img>
-          <img height="170" :src="card.image" alt />
-        </template>
-        <template #text>
-          <p>{{card.content}}</p>
-        </template>
-        <template #interactions>
-          <vs-button danger icon>
-            <IconWarning class="warning-icon" />
-          </vs-button>
-          <vs-button class="btn-chat" shadow primary>
-            <IconAnalysis class="analysis-icon" />
-            <span class="span">{{card.warning}}</span>
-          </vs-button>
-        </template>
-      </vs-card>
-    </vs-card-group>
-  </div>
+  <flickity class="item-container" ref="flickity" :options="flickityOptions">
+    <vs-card class="item" v-for="(card, index) in cards" :key="index">
+      <template #title>
+        <h3>{{ card.title }}</h3>
+      </template>
+      <template #img>
+        <img :src="card.image" height="160" alt="" />
+      </template>
+      <template #text>
+        <p>
+          {{ card.content }}
+        </p>
+      </template>
+      <template #interactions>
+        <vs-button danger icon>
+          <IconWarning class="warning-icon" />
+        </vs-button>
+        <vs-button class="btn-chat" shadow primary>
+          <IconAnalysis class="analysis-icon" />
+          <span class="span">
+            {{ card.warning }}
+          </span>
+        </vs-button>
+      </template>
+    </vs-card>
+  </flickity>
 </template>
 
 <script>
-import IconWarning from "../../icons/Warning.svg";
-import IconAnalysis from "../../icons/Analysis.svg";
+import IconWarning from "../../icons/Warning.svg"
+import IconAnalysis from "../../icons/Analysis.svg"
+import Flickity from "vue-flickity"
 export default {
   components: {
     IconWarning,
-    IconAnalysis
+    IconAnalysis,
+    Flickity
   },
   data() {
     return {
+      flickityOptions: {
+        initialIndex: 3,
+        prevNextButtons: false,
+        pageDots: false,
+        wrapAround: true,
+        freeScroll: true
+        //autoPlay: 1500
+
+        // any options from Flickity can be used
+      },
       cards: [
         {
           title: "Cyber Security",
@@ -46,7 +60,8 @@ export default {
         {
           title: "Network",
           content: "Network Systems",
-          image: "https://www.fgdc.gov/img/slider/slider-bg-network.jpg/image",
+          image:
+            "https://lnxmaster.com/wp-content/uploads/2020/05/1579001272_abstract_digital_network_mapping_by_mf3d_gettyimages-888477728_1200x800-100768192-large.jpg",
           warning: "14"
         },
         {
@@ -72,31 +87,41 @@ export default {
         },
         {
           title: "Computer",
-          content: "Intelligence Software Solutions",
-          image:
-            "https://www.evernex.com/wp-content/uploads/2016/10/Untitled-1-1.jpg",
+          content: "Intelligence Software",
+          image: "https://www.evernex.com/wp-content/uploads/2016/10/Untitled-1-1.jpg",
           warning: "8"
         }
-      ]
-    };
+      ],
+      methods: {
+        next() {
+          this.$refs.flickity.next()
+        },
+
+        previous() {
+          this.$refs.flickity.previous()
+        }
+      }
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
-.cards-container {
-  max-width: 1100px;
-  @media (--t) {
-    max-width: 400px;
-  }
-  @media (--tl) {
-    max-width: 180px;
-  }
-}
-.card-box {
-  @media (--tl) {
-  }
-  .card-item {
+.item-container {
+  width: 100%;
+  height: 250px;
+  .item {
+    width: 18%; /* full width */
+    height: 300px; /* height of carousel */
+    margin-right: 20px;
+    @media (--t) {
+      width: 40%;
+      margin-right: 20px;
+    }
+    @media (--tl) {
+      width: 80%;
+      margin-right: 5px;
+    }
   }
 }
 

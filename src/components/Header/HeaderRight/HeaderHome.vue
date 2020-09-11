@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import IconHome from "../../../icons/Home.svg";
+import IconHome from "../../../icons/Home.svg"
 export default {
   components: {
     IconHome
@@ -16,15 +16,15 @@ export default {
   data() {
     return {
       active: 0
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
 svg {
-  width: 21px;
-  height: 21px;
+  width: 22px;
+  height: 22px;
 }
 a {
   display: inline-flex;

@@ -19,55 +19,55 @@
       class="dropdown-menu dropdown-menu-right scrollable-menu"
       aria-labelledby="dropdownMenuButton"
     >
-      <vs-button color="#fff" @click="openNotification1">
+      <vs-button color="#fff" @click="openNotification1('top-center')">
         <a class="dropdown-item" href="#">
           <div class="svg-box svg-box-1">
             <IconAnalysis />
           </div>
           <div class="dropdown-item-info">
-            <p>{{items[0].date}}</p>
-            <p>{{items[0].content.slice(0,28)}}...</p>
+            <p>{{ items[0].date }}</p>
+            <p>{{ items[0].content.slice(0, 28) }}...</p>
           </div>
         </a>
       </vs-button>
 
       <div class="dropdown-divider"></div>
-      <vs-button color="#fff" @click="openNotification2">
+      <vs-button color="#fff" @click="openNotification2('top-center')">
         <a class="dropdown-item" href="#">
           <div class="svg-box svg-box-2">
             <IconWarning />
           </div>
           <div class="dropdown-item-info">
-            <p>{{items[1].date}}</p>
-            <p>{{items[1].content.slice(0,28)}}...</p>
+            <p>{{ items[1].date }}</p>
+            <p>{{ items[1].content.slice(0, 28) }}...</p>
           </div>
         </a>
       </vs-button>
 
       <div class="dropdown-divider"></div>
 
-      <vs-button color="#fff" @click="openNotification3">
+      <vs-button color="#fff" @click="openNotification3('top-center')">
         <a class="dropdown-item" href="#">
           <div class="svg-box svg-box-3">
             <IconSignal />
           </div>
           <div class="dropdown-item-info">
-            <p>{{items[2].date}}</p>
-            <p>{{items[2].content.slice(0,28)}}...</p>
+            <p>{{ items[2].date }}</p>
+            <p>{{ items[2].content.slice(0, 28) }}...</p>
           </div>
         </a>
       </vs-button>
 
       <div class="dropdown-divider"></div>
 
-      <vs-button color="#fff" @click="openNotification4">
+      <vs-button color="#fff" @click="openNotification4('top-center')">
         <a class="dropdown-item" href="#">
           <div class="svg-box svg-box-4">
             <IconChartDown />
           </div>
           <div class="dropdown-item-info">
-            <p>{{items[3].date}}</p>
-            <p>{{items[3].content.slice(0,28)}}...</p>
+            <p>{{ items[3].date }}</p>
+            <p>{{ items[3].content.slice(0, 28) }}...</p>
           </div>
         </a>
       </vs-button>
@@ -76,36 +76,40 @@
 </template>
 
 <script>
-import IconNotification from "../../../icons/Notification.svg";
-import IconAnalysis from "../../../icons/Analysis.svg";
-import IconSignal from "../../../icons/Signal.svg";
-import IconWarning from "../../../icons/Warning.svg";
-import IconChartDown from "../../../icons/ChartDown.svg";
+import IconNotification from "../../../icons/Notification.svg"
+import IconAnalysis from "../../../icons/Analysis.svg"
+import IconSignal from "../../../icons/Signal.svg"
+import IconWarning from "../../../icons/Warning.svg"
+import IconChartDown from "../../../icons/ChartDown.svg"
 export default {
   methods: {
-    openNotification1() {
+    openNotification1(position = null) {
       this.$vs.notification({
+        position,
         title: this.items[0].date,
         text: `${this.items[0].content} 👉`
-      });
+      })
     },
-    openNotification2() {
+    openNotification2(position = null) {
       this.$vs.notification({
+        position,
         title: this.items[1].date,
         text: `${this.items[1].content} 👉`
-      });
+      })
     },
-    openNotification3() {
+    openNotification3(position = null) {
       this.$vs.notification({
+        position,
         title: this.items[2].date,
         text: `${this.items[2].content} 👉`
-      });
+      })
     },
-    openNotification4() {
+    openNotification4(position = null) {
       this.$vs.notification({
+        position,
         title: this.items[3].date,
         text: `${this.items[3].content} 👉`
-      });
+      })
     }
   },
   data() {
@@ -131,7 +135,7 @@ export default {
           content: "A new monthly report is ready to download!"
         }
       ]
-    };
+    }
   },
   components: {
     IconNotification,
@@ -140,7 +144,7 @@ export default {
     IconWarning,
     IconChartDown
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
@@ -149,7 +153,7 @@ svg {
   height: 22px;
 }
 .dropdown {
-  margin-top: 3px;
+  margin-top: 2.5px;
 }
 .scrollable-menu {
   height: auto;

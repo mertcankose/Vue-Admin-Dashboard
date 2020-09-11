@@ -1,10 +1,16 @@
 <template>
-  <div>Calendar</div>
+  <div class="calendar">
+    <CustomText tag="h1">Calendar</CustomText>
+  </div>
 </template>
 
 <script>
-export default {};
+import CustomText from "@/components/Helpers/CustomText"
+export default {
+  components: {
+    CustomText
+  }
+}
 </script>
 
-<style>
-</style>
+<style></style>

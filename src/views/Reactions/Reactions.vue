@@ -1,10 +1,16 @@
 <template>
-  <div>Reaction</div>
+  <div class="reactions">
+    <CustomText tag="h1">Reactions</CustomText>
+  </div>
 </template>
 
 <script>
-export default {};
+import CustomText from "@/components/Helpers/CustomText"
+export default {
+  components: {
+    CustomText
+  }
+}
 </script>
 
-<style>
-</style>
+<style></style>
