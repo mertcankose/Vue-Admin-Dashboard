@@ -5,7 +5,7 @@
         <h3>{{ card.title }}</h3>
       </template>
       <template #img>
-        <img :src="card.image" height="170" alt="" />
+        <img :src="card.image" height="180" alt="" />
       </template>
       <template #text>
         <p>
@@ -44,8 +44,8 @@ export default {
         prevNextButtons: false,
         pageDots: false,
         wrapAround: true,
-        freeScroll: true,
-        autoPlay: 1500
+        freeScroll: true
+        //autoPlay: 1500
 
         // any options from Flickity can be used
       },
@@ -111,14 +111,16 @@ export default {
   height: 250px;
 }
 .item {
-  width: 23%; /* full width */
-  height: 100%; /* height of carousel */
+  width: 18%; /* full width */
+  height: 300px; /* height of carousel */
+  margin-right: 20px;
   @media (--t) {
     width: 40%;
     margin-right: 20px;
   }
   @media (--tl) {
     width: 80%;
+    margin-right: 5px;
   }
 }
 
