@@ -5,7 +5,7 @@
         <h3>{{ card.title }}</h3>
       </template>
       <template #img>
-        <img :src="card.image" height="180" alt="" />
+        <img :src="card.image" height="150" alt="" />
       </template>
       <template #text>
         <p>
