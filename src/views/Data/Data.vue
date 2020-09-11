@@ -2,7 +2,7 @@
   <div class="data">
     <div class="cards">
       <h1>Systems</h1>
-      <Cards />
+      <OneCard />
     </div>
     <div class="boxes">
       <ActivityCard />
@@ -13,20 +13,22 @@
 </template>
 
 <script>
-import ActivityCard from "../../components/DataPage/Activity";
-import Progress from "../../components/DataPage/Progress";
-import Cards from "../../components/DataPage/Cards";
-import Permissions from "../../components/DataPage/Permissions";
+import ActivityCard from "../../components/DataPage/Activity"
+import Progress from "../../components/DataPage/Progress"
+//import Cards from "../../components/DataPage/Cards";
+import OneCard from "../../components/DataPage/OneCard"
+import Permissions from "../../components/DataPage/Permissions"
 
 export default {
   name: "Notification",
   components: {
     ActivityCard,
     Progress,
-    Cards,
-    Permissions
+    //Cards,
+    Permissions,
+    OneCard
   }
-};
+}
 </script>
 
 <style scoped lang="postcss">
@@ -43,7 +45,7 @@ export default {
   }
   .cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     @media (--t) {
