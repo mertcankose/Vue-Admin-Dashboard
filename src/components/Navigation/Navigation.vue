@@ -11,103 +11,35 @@
     </div>
 
     <div class="nav-links">
-      <router-link :to="{ name: 'Home' }">
-        <IconHome />
-        <CustomText v-if="showAndHide">Dashboard</CustomText>
+      <router-link
+        v-for="(item, index) in navigation"
+        :key="index"
+        :to="{ name: item.routerName }"
+      >
+        <DynamicIcon :icon="item.icon" />
+        <CustomText v-if="showAndHide">{{ item.routerName }}</CustomText>
       </router-link>
-      <div class="nav-links2">
-        <router-link :to="{ name: 'Data' }">
-          <IconData></IconData>
-          <CustomText v-if="showAndHide">Data</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Module' }">
-          <IconCompass></IconCompass>
-          <CustomText v-if="showAndHide">Widgets</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Documentation' }">
-          <IconDocumentation></IconDocumentation>
-          <CustomText v-if="showAndHide">Documentation</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Form' }">
-          <IconForm></IconForm>
-          <CustomText v-if="showAndHide">Form</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Reactions' }">
-          <IconFace></IconFace>
-          <CustomText v-if="showAndHide">Reactions</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Mails' }">
-          <IconMail></IconMail>
-          <CustomText v-if="showAndHide">Emails</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Calendar' }">
-          <IconCalendar></IconCalendar>
-          <CustomText v-if="showAndHide">Calendar</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Gallery' }">
-          <IconCamera></IconCamera>
-          <CustomText v-if="showAndHide">Gallery</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'About' }">
-          <IconPerson></IconPerson>
-          <CustomText v-if="showAndHide">About</CustomText>
-        </router-link>
-
-        <router-link :to="{ name: 'Settings' }">
-          <IconSettings></IconSettings>
-          <CustomText v-if="showAndHide">Settings</CustomText>
-        </router-link>
-      </div>
     </div>
   </nav>
 </template>
 
 <script>
-//icons
-import IconHome from "../../icons/Home.svg"
-import IconDocumentation from "../../icons/Table.svg"
-import IconForm from "../../icons/Saved.svg"
-import IconSettings from "../../icons/Settings.svg"
-import IconPerson from "../../icons/Person.svg"
-import IconCompass from "../../icons/Compass.svg"
-import IconFace from "../../icons/Face.svg"
-import IconMail from "../../icons/Email.svg"
-import IconCalendar from "../../icons/Calendar.svg"
-import IconCamera from "../../icons/Camera.svg"
-import IconData from "../../icons/Data.svg"
-//components
 import CustomText from "../Helpers/CustomText"
-//eventBus
 import { eventBus } from "../../main"
-
+//Mixins
+import { sizeMixin } from "../../mixins/sizeMixin"
+import { navigationMixin } from "../../mixins/navigationMixin"
+//dynamcik component for icons
+import DynamicIcon from "./IconHelper"
 export default {
   name: "Navigation",
+  mixins: [sizeMixin, navigationMixin],
   components: {
-    IconHome,
-    IconData,
-    IconDocumentation,
-    IconForm,
-    IconSettings,
-    IconPerson,
-    IconCompass,
-    IconFace,
-    IconMail,
-    IconCalendar,
-    IconCamera,
-    CustomText
+    CustomText,
+    DynamicIcon
   },
   data() {
     return {
-      windowWidth: undefined,
-      windowHeight: undefined,
       showAndHide: true,
       clickedMenu: false
     }
@@ -116,41 +48,6 @@ export default {
     eventBus.$on("clickedMenu", value => {
       this.clickedMenu = value
     })
-    console.log(this.$route.params)
-  },
-
-  mounted() {
-    this.$nextTick(function() {
-      window.addEventListener("resize", this.getWindowWidth)
-      window.addEventListener("resize", this.getWindowHeight)
-
-      //Init
-      this.getWindowWidth()
-      this.getWindowHeight()
-    })
-  },
-
-  methods: {
-    getWindowWidth() {
-      this.windowWidth = document.documentElement.clientWidth
-    },
-
-    getWindowHeight() {
-      this.windowHeight = document.documentElement.clientHeight
-    }
-  },
-  watch: {
-    windowWidth: function() {
-      if (this.windowWidth <= 973) {
-        this.showAndHide = false
-      } else {
-        this.showAndHide = true
-      }
-    }
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.getWindowWidth)
-    window.removeEventListener("resize", this.getWindowHeight)
   }
 }
 </script>
@@ -195,22 +92,15 @@ export default {
 .navigation a {
   display: flex;
   align-items: center;
-
   @media (--t) {
     justify-content: center;
   }
 }
-
 .nav-links {
   a {
-    margin-bottom: 12px;
-    padding: 12px;
+    padding: 20px 12px;
     margin-left: 0;
   }
-}
-
-.nav-links2 a {
-  height: 100%;
 }
 
 svg {
